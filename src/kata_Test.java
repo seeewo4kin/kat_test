@@ -15,6 +15,9 @@ class kata_Test {
 
 
         String[] numbers = input.split("[+\\-*/]");
+        for (int i = 0; i < numbers.length; i++ ){
+            numbers[i] = numbers[i].trim();
+        }
         if (numbers.length != 2) throw new Exception("Должно быть два числа.");
         boolean isRoman = Rome.isRome(numbers);
         String oper = kata_Test.findoperation(input);
