@@ -7,28 +7,29 @@ public class Rome {
         int num1;
         int num2;
 
-        for (int nLength = 0; nLength < numbers.length; nLength++) {
+        for (int nLength = 0; nLength < 2; nLength++) {
             for (int rnLength = 0; rnLength < romanNumbers.length; rnLength++) {
-                if (numbers[nLength].contains(romanNumbers[rnLength]) && nLength == 0) {
+                if (numbers[nLength].equals(romanNumbers[rnLength]) && nLength == 0) {
                     firstRoman = true;
                 }
-                if (numbers[nLength].contains(romanNumbers[rnLength]) && nLength == 1) {
+                if (numbers[nLength].equals(romanNumbers[rnLength]) && nLength == 1) {
                     secondRoman = true;
 
                 }
             }
+        }
             if (firstRoman && secondRoman) {
                 return true;
             } else if (firstRoman && !secondRoman) throw new Exception("Оба числа должны быть одного формата");
             else if (!firstRoman && secondRoman) throw new Exception("Оба числа должны быть одного формата");
-        }
+
         return false;
     }
 
     public static int firstToArabic(String[] numbers) {
         String[] romanNumbers = new String[]{"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         for (int rnLength = 0; rnLength < romanNumbers.length; rnLength++) {
-            if (numbers[0].contains(romanNumbers[rnLength])) {
+            if (numbers[0].equals(romanNumbers[rnLength])) {
                 return rnLength;
 
             }
@@ -38,7 +39,7 @@ public class Rome {
     public static int secondToArabic(String[] numbers){
         String[] romanNumbers = new String[]{"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         for (int rnLength = 0; rnLength < romanNumbers.length; rnLength++) {
-            if (numbers[1].contains(romanNumbers[rnLength])) {
+            if (numbers[1].equals(romanNumbers[rnLength])) {
                 return rnLength;
             }
         }
