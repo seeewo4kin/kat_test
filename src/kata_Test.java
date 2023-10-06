@@ -14,7 +14,7 @@ class kata_Test {
         int result = 0;
 
 
-        String[] numbers = input.split("[+\\-*/]");
+        String[] numbers = input.split("[+\\*-/]");
         for (int i = 0; i < numbers.length; i++ ){
             numbers[i] = numbers[i].trim();
         }
